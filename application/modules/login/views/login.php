@@ -23,7 +23,7 @@
             <div class="col-md-4 col-md-offset-4">
                 <div class="login-panel panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title"><img src="<?php echo base_url();?>assets/images/logo_hilios.png" height="25"> HILIOS POWER </h3>
+                        <h3 class="panel-title"><i class="fa fa-lock"></i> SISFO MARKETING </h3>
                         
                     </div>
                     <div class="panel-body">

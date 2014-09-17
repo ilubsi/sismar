@@ -32,11 +32,17 @@ class Privilege extends CI_Controller{
 	    $jabatan = $this->_get_jabatan_by_id($id);
 	    if(!$jabatan)
 	        show_404();
+	    
+	    //if privilege already exist, its edit_box else add_box
 	    $box = $this->_add_box();
 	    if($this->privilege_model->check_privilege($id))
 	        $box = $this->_edit_box($id);
+	        
 	    $this->_render('add_privilege',array('id'=>$id,'tr'=>$box,'jabatan'=>$jabatan));
 	}
+	
+	
+	//well its a lit bit messy here haha, 
 	private function _add_box(){
 	
 	    $module = $this->privilege_model->modul();
@@ -85,8 +91,7 @@ class Privilege extends CI_Controller{
 		            
 		            $tr .= '</tr>';
 		        }
-		    }
-		    
+		    }		    
 		    
 		}
 		
@@ -155,13 +160,11 @@ class Privilege extends CI_Controller{
 		            
 		            $tr .= '</tr>';
 		        }
-		    }
-		    
+		    }		    
 		    
 		}
 		
-		return $tr;
-	    
+		return $tr;	    
 	
 	}
 	
@@ -173,8 +176,4 @@ class Privilege extends CI_Controller{
 	}
 	
 	
-	
-	
-	
-
-}
+}//end if class

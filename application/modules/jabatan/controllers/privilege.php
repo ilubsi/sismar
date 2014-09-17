@@ -24,12 +24,14 @@ class Privilege extends CI_Controller{
 	    if($jab)
 	        return $jab->jabatan;
 	        
-	    return '';
+	    return false;
 	}
 	public function proses(){
 
 	    $id = $this->uri->segment(4);
 	    $jabatan = $this->_get_jabatan_by_id($id);
+	    if(!$jabatan)
+	        show_404();
 	    $box = $this->_add_box();
 	    if($this->privilege_model->check_privilege($id))
 	        $box = $this->_edit_box($id);
